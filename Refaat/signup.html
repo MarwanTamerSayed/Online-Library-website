@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Online Library</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+
+  <header>
+    <h1>Online Library</h1>
+    <nav>
+        <ul>
+            <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="Marwan_Page.html"><i class="fas fa-book"></i> Book List</a></li>
+            <li><a href="Marwa_Page.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+            <li><a href="Refaat_Page.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+
+        </ul>
+    </nav>
+  </header>
+
+  <!--  #f5f5dc -->
+
+  <body>
+    <div class="container">
+      <form action="post">
+        <label for="fname">First name</label><br />
+        <input type="text" id="fname" /><br />
+        <label for="lname">Last name</label><br />
+        <input type="text" id="lname" /><br />
+        <label for="email">Email</label><br />
+        <input type="text" id="email" /><br />
+        <label for="pass1">Password</label><br />
+        <input type="password" id="pass1" /><br />
+        <label for="pass2">Confirm password</label><br />
+        <input type="password" id="pass2" /><br />
+        <div id="radio">
+          <label>Sign-up as</label> <br><br>
+          <input type="radio" id="admin" name="status" value="admin" required>
+          <label for="admin" id="AAdmin">Admin</label> 
+          <input type="radio" id="user" name="status" value="user">
+          <label for="user">User</label> <br><br>
+        </div>      
+        <input type="submit" name="log" value="submit" />
+      </form>
+    </div>
+  </body>
+
+  <footer>
+    <p>&copy; 2025 Online Library.</p>
+  </footer>
+</html>

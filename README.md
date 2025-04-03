@@ -43,12 +43,14 @@
 </html>
 
 ## Common CSS Style
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #FAE3D9; 
 }
+
 
 header {
     color: #FFF5E1; 
@@ -59,6 +61,7 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+
 
 .header-container {
     display: flex;

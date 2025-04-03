@@ -78,6 +78,7 @@ h1 {
     font-weight: bold;
     text-transform: uppercase;
 }
+
 nav {
     display: flex;
     justify-content: center;
@@ -115,6 +116,7 @@ nav ul li a:hover {
     box-shadow: 0px 0px 8px rgba(255, 183, 77, 0.6);
     transform: scale(1.1); 
 }
+
 footer {
     position: static;
     bottom: 0;

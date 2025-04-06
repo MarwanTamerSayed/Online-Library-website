@@ -2,14 +2,22 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FAE3D9;
+    background-color:  #EBD9C5  ;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 header {
     color: #FFF5E1;
     margin: 0;
     padding: 10px 20px;
-    background-color: #5D4037;
+    background-color: #4E342E;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +47,7 @@ nav {
     align-items: center;
     padding: 10px 0;
     border-radius: 5px;
-    background-color: #5D4037;
+    background-color: #4E342E;
     margin-top: 10px;
 }
 
@@ -64,9 +72,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #FFB74D;
+    background-color: #A1887F;
     color: white;
-    box-shadow: 0px 0px 8px rgba(255, 183, 77, 0.6);
+    box-shadow: 0px 0px 8px rgba(161, 136, 127, 0.6);
     transform: scale(1.1);
 }
 
@@ -86,11 +94,11 @@ nav ul li a:hover {
 }
 
 .search-container input:focus {
-    border-color: #FFB74D;
+    border-color: #A1887F;
 }
 
 .search-container button {
-    background-color: #FFB74D;
+    background-color: #A1887F;
     color: white;
     padding: 8px 12px;
     border: none;
@@ -100,13 +108,25 @@ nav ul li a:hover {
 }
 
 .search-container button:hover {
-    background-color: #FF9800;
+    background-color: #8D6E63;
 }
 
 main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 section {
@@ -120,10 +140,12 @@ h2 {
 }
 
 form {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 form label {
@@ -143,22 +165,27 @@ form input, form textarea {
 }
 
 form input:focus, form textarea:focus {
-    border-color: #FFB74D;
+    border-color: #A1887F;
 }
 
 form button {
-    background-color: #5D4037;
+    background-color: #4E342E;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form button::before {
+    content: "+ ";
 }
 
 form button:hover {
-    background-color: #FF9800;
+    background-color: #8D6E63;
+    transform: scale(1.05) rotate(-1deg);
 }
 
 table {
@@ -176,7 +203,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #5D4037;
+    background-color: #4E342E;
     color: white;
     font-size: 16px;
 }
@@ -186,8 +213,15 @@ table td {
     color: #333;
 }
 
+table tbody tr:hover {
+    background-color: #FAF3E0;
+    transform: scale(1.01);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
 table button {
-    background-color: #FFB74D;
+    background-color: #A1887F;
     color: white;
     padding: 5px 10px;
     border: none;
@@ -197,7 +231,7 @@ table button {
 }
 
 table button:hover {
-    background-color: #FF9800;
+    background-color: #8D6E63;
 }
 
 footer {
@@ -206,11 +240,31 @@ footer {
     width: 100%;
     text-align: center;
     color: #FFF5E1;
-    background-color: #5D4037;
+    background-color: #4E342E;
     padding: 10px;
 }
 
 footer p {
     margin: 0;
     font-size: 14px;
+}
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #8D6E63;
+    color: white;
+    padding: 18px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    z-index: 1000;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.fab:hover {
+    background-color: #A1887F;
 }

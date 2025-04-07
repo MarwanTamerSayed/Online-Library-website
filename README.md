@@ -17,7 +17,10 @@
         
         <div class="header-container">
             <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
-            <h1>Online Library</h1>
+            <div>
+                <h1>Biblionet</h1>
+                <p>Connecting Minds, One Book at a Time</p>
+            </div>
         </div>
         <nav>
             <ul>
@@ -157,19 +160,85 @@ nav ul li a:hover {
     background-color: #8D6E63;
 }
 
+form {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #A1887F;
+}
+
+form button {
+    background-color: #4E342E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form button::before {
+    content: "+ ";
+}
+
+form button:hover {
+    background-color: #8D6E63;
+    transform: scale(1.05) rotate(-1deg);
+}
 footer {
     position: static;
     bottom: 0;
     width: 100%;
     text-align: center;
-    color: #FFF5E1; 
-    background-color: #5D4037; 
+    color: #FFF5E1;
+    background-color: #4E342E;
     padding: 10px;
 }
 
 footer p {
     margin: 0;
     font-size: 14px;
-    color: #FFF5E1;
+}
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #8D6E63;
+    color: white;
+    padding: 18px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     text-align: center;
+    z-index: 1000;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.fab:hover {
+    background-color: #A1887F;
 }

@@ -48,20 +48,26 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FAE3D9; 
+    background-color:  #EBD9C5  ;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
 
 header {
-    color: #FFF5E1; 
+    color: #FFF5E1;
     margin: 0;
-    padding: 5px 15px;
-    background-color: #5D4037;
+    padding: 10px 20px;
+    background-color: #4E342E;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 
 .header-container {
     display: flex;
@@ -69,14 +75,16 @@ header {
 }
 
 .logo {
-    height: 70px; 
+    height: 70px;
     margin-right: 15px;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
 }
 
 nav {
@@ -85,8 +93,8 @@ nav {
     align-items: center;
     padding: 10px 0;
     border-radius: 5px;
-    background: #5D4037; 
-    margin-top: 20px;
+    background-color: #4E342E;
+    margin-top: 10px;
 }
 
 nav ul {
@@ -94,13 +102,13 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    font-size: 14px;
-    color: #FFF5E1; 
+    font-size: 16px;
+    color: #FFF5E1;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -109,12 +117,44 @@ nav ul li a {
     transition: all 0.3s ease-in-out;
 }
 
-
 nav ul li a:hover {
-    background: #FFB74D; 
+    background-color: #A1887F;
     color: white;
-    box-shadow: 0px 0px 8px rgba(255, 183, 77, 0.6);
-    transform: scale(1.1); 
+    box-shadow: 0px 0px 8px rgba(161, 136, 127, 0.6);
+    transform: scale(1.1);
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    padding: 5px;
+}
+
+.search-container input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: #A1887F;
+}
+
+.search-container button {
+    background-color: #A1887F;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #8D6E63;
 }
 
 footer {

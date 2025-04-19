@@ -6,6 +6,8 @@
     <title>Login - Biblionet</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="validation.js"></script>
+
   </head>
 
   <header>
@@ -30,11 +32,16 @@
 
   <body>
     <div class="container">
-      <form action="post">
+      <form method="post" id="login-form">
         <label for="User">Username</label><br />
-        <input type="text" id="User" /><br />
+        <input required type="text" id="User" />
+        <div id="username-error" style="color: red;font-size: small;"></div>
+        <br />
+        
         <label for="pass">password</label><br />
-        <input type="Password" id="pass" /><br />
+        <input required type="Password" id="pass" />
+        <div id="pass-error" style="color: red;font-size: small;"></div>
+        <br />
         <a class= "linkk" id="left" href="#">Forgot password?</a><br>
         <input  type="submit" name="log" value="login" />
         <p>Don't have an account? <a class="linkk" href="signup.html" > Sign up</a></p>
@@ -42,6 +49,7 @@
         
       </form>
     </div>
+  
   </body>
 
   <footer style="position: fixed">

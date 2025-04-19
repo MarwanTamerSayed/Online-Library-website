@@ -6,6 +6,7 @@
     <title>Sign up - Biblionet</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="validation.js"></script>
   </head>
 
   <header>
@@ -31,17 +32,27 @@
 
   <body>
     <div class="container">
-      <form action="post">
+      <form method="post" id="signup-form">
         <label for="fname">First name</label><br />
-        <input type="text" id="fname" /><br />
+        <input required type="text" id="fname" />
+        <div id="fname-error" style="color:red; font-size: small;"></div>
+        <br />
         <label for="lname">Last name</label><br />
-        <input type="text" id="lname" /><br />
+        <input required type="text" id="lname" />
+        <div id="lname-error" style="color:red; font-size: small;"></div>
+        <br />
         <label for="email">Email</label><br />
-        <input type="text" id="email" /><br />
+        <input required type="text" id="email" />
+        <div id="email-error" style="color:red; font-size: small;"></div>
+        <br />
         <label for="pass1">Password</label><br />
-        <input type="password" id="pass1" /><br />
+        <input required type="password" id="pass1" />
+        <div id="pass1-error" style="color:red; font-size: small;"></div>
+        <br />
         <label for="pass2">Confirm password</label><br />
-        <input type="password" id="pass2" /><br />
+        <input required type="password" id="pass2" />
+        <div id="pass2-error" style="color:red; font-size: small;"></div>
+        <br />
         <div id="radio">
           <label>Sign-up as</label> <br><br>
           <input type="radio" id="admin" name="status" value="admin" required>

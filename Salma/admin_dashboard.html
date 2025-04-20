@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Biblionet Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="admin_dashboard.css">
+    <link rel="stylesheet" href="styles[admin_dashboard].css">
 </head>
 <body>
 <header>
@@ -19,9 +19,9 @@
         <ul>
             <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
-            <li><a href="Marwa_Page.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+            <li><a href="Borrowed Books.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
             <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-            <li><a href="Refaat_Page.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li><a href="signup.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
         <form class="search-container" method="GET">
             <input type="text" placeholder="Search for a book..." name="search">
@@ -50,7 +50,11 @@
             <textarea id="description" rows="4" required></textarea>
 
             <button type="submit">Add Book</button>
+
+            <div id="message" class="message"></div>
         </form>
+
+
     </section>
 
     <section>
@@ -81,5 +85,6 @@
 <footer>
     <p>&copy; 2025 Online Library.</p>
 </footer>
+<script src="admin_dashboard.js"></script>
 </body>
 </html>

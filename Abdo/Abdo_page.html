@@ -11,29 +11,32 @@
 
 <body>
 
-<header>
-
-    <div class="header-container">
-        <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
-        <div class="title">
+    <header>
+        <div class="header-container">
+          <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+          <div class="title">
             <h1>Biblionet</h1>
             <p>Connecting Minds, One Book at a Time</p>
+          </div>
         </div>
-    </div>
-    <nav>
-        <ul>
+      
+        <nav>
+          <ul>
             <li><a href="Abdo_Page.html"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="BookList.html"><i class="fas fa-book"></i>Book List</a></li>
-            <li><a href="Marwa_Page.html"><i class="fas fa-book-reader"></i>Borrowed Books</a></li>
+            <li><a href="Borrowed Books.html"><i class="fas fa-book-reader"></i>Borrowed Books</a></li>
             <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i>About Us</a></li>
-            <li><a href="Refaat_Page.html"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-        </ul>
-        <form class="search-container" method="GET">
-            <input type="text" placeholder="Search for a book..." name="search">
-            <button type="submit"><i class="fas fa-search"></i> Search</button>
-        </form>
-    </nav>
-</header>
+          </ul>
+        </nav>
+      
+        <div class="top_right">
+          <a href="login.html" class="Log_in">Log in</a>
+          <div class="vl"></div>
+          <a href="signup.html" class="Register">Register</a>
+
+        </div>
+      </header>
+      
 
 <section class="welcome-section">
     <div class="welcome-content">
@@ -44,7 +47,7 @@
             <span class="divider-line"></span>
         </div>
         <p>Discover, borrow, and enjoy thousands of books at your fingertips</p>
-        <a href="#" class="browse-btn">Browse Books</a>
+        <a href="BookList.html" class="browse-btn">Browse Books</a>
     </div>
 </section>
 
@@ -58,39 +61,42 @@
             <div class="book-container">
                 <div class="book">
                     <a href="Mariem.html">
-                        <img src="public/Cover_Image/AOT.jpg" alt="Book Cover">
-                        <h3>Attack On Titan</h3>
+                    <img src="AOT.jpg" alt="Book Cover">
+                    <h3>Attack On Titan</h3>
                     </a>
                     <p><strong>Author:</strong> Hajime Isayama</p>
-                    <p><strong>Genre:</strong> Action, Mystery</p>
-                    <p class="description">In a world overrun by terrifying man-eating Titans,
-                        humanity fights for survival behind massive walls.
-                        Eren Yeager and his friends join the military to uncover the secrets behind
+                    <p><strong>Genre:</strong> Action,Mystery</p>
+                    <p class="description">In a world overrun by terrifying man-eating Titans, 
+                        humanity fights for survival behind massive walls. 
+                        Eren Yeager and his friends join the military to uncover the secrets behind 
                         the Titans and reclaim their freedom.</p>
                 </div>
 
                 <div class="book">
                     <a href="Mariem.html">
-                        <img src="public/Cover_Image/one piece.jpg" alt="Book Cover">
-                        <h3>One Piece</h3>
-                    </a>
+                    <img src="one_piece.jpg" alt="Book Cover">
+                    <h3>One Piece</h3>
+                </a>
                     <p><strong>Author:</strong> Eiichiro Oda </p>
-                    <p><strong>Genre:</strong>  Adventure, comedy</p>
-                    <p class="description">Follow Monkey D. Luffy and his crew as they sail the Grand
-                        Line in search of the legendary treasure, One Piece. Along the way,
+                    <p><strong>Genre:</strong> 	
+                        Adventure,
+                        Fantasy comedy,
+                        Science fiction</p>
+                    <p class="description">Follow Monkey D. Luffy and his crew as they sail the Grand 
+                        Line in search of the legendary treasure, One Piece. Along the way, 
                         they face powerful enemies, uncover deep mysteries, and chase their dreams of
-                        becoming the greatest pirates.</p>
+                         becoming the greatest pirates.</p>
                 </div>
                 <div class="book">
                     <a href="Mariem.html">
-                        <img src="public/Cover_Image/death note.jpg" alt="Book Cover">
+                        <img src="Death_Note.webp" alt="Book Cover">
                         <h3>Death Note</h3>
                     </a>
                     <p><strong>Author:</strong> Tsugumi Ohba</p>
                     <p><strong>Genre:</strong> Psychological, Mystery</p>
                     <p class="description">When high school student Light Yagami finds a mysterious notebook that allows him to
-                        kill anyone by writing their name in it, he sets out to create a
-                        crime-free world—but a genius detective, L, is determined to stop him.</p>
+                         kill anyone by writing their name in it, he sets out to create a 
+                         crime-free world—but a genius detective, L, is determined to stop him.</p>
                 </div>
             </div>
         </div>
@@ -101,8 +107,5 @@
 <footer>
     <p>&copy; 2025 Biblionet.</p>
 </footer>
-<a href="admin_dashboard.html" class="admin-icon" title="Admin Dashboard">
-    <i class="fas fa-user-shield"></i>
-</a>
 
 </body>

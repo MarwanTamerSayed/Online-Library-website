@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List - Online Library</title>
+    <link rel="stylesheet" href="styles[BookList&Aboutus].css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        
+        <div class="header-container">
+            <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+            <div>
+                <h1>Biblionet</h1>
+                <p>Connecting Minds, One Book at a Time</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Abdo_page.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="BookList.html"><i class="fas fa-book"></i>Book List</a></li>
+            <li><a href="Borrowed Books.html"><i class="fas fa-book-reader"></i>Borrowed Books</a></li>
+            <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="signup.html"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+            <form class="search-container" onsubmit="return false;">
+                <input type="text" id="searchInput" placeholder="Search for a book..." onkeyup="searchBooksList()">
+                <button type="button" onclick="searchBooks()"><i class="fas fa-search"></i> Search</button>
+            </form>
+            
+        </nav>
+    </header>
+    
+    <!-- Book List Section -->
+    <section class="book-list">
+        <h2>Available Books</h2>
+        <div class="book-container">
+        
+            <div class="book">
+                <a href="Mariem.html">
+                <img src="AOT.jpg" alt="Book Cover">
+                <h3>Attack On Titan</h3>
+                </a>
+                <p><strong>Author:</strong> Hajime Isayama</p>
+                <p><strong>Genre:</strong> Action,Mystery</p>
+                <p class="description">In a world overrun by terrifying man-eating Titans, 
+                    humanity fights for survival behind massive walls. 
+                    Eren Yeager and his friends join the military to uncover the secrets behind 
+                    the Titans and reclaim their freedom.</p>
+            </div>
+        
+            <div class="book">
+                <a href="Mariem.html">
+                <img src="one_piece.jpg" alt="Book Cover">
+                <h3>One Piece</h3>
+            </a>
+                <p><strong>Author:</strong> Eiichiro Oda </p>
+                <p><strong>Genre:</strong> 	
+                    Adventure,
+                    Fantasy comedy,
+                    Science fiction</p>
+                <p class="description">Follow Monkey D. Luffy and his crew as they sail the Grand 
+                    Line in search of the legendary treasure, One Piece. Along the way, 
+                    they face powerful enemies, uncover deep mysteries, and chase their dreams of
+                     becoming the greatest pirates.</p>
+            </div>
+            <div class="book">
+                <a href="book_details.html">
+                <img src="Naruto.jpg" alt="Book Cover">
+                <h3>Naruto</h3>
+            </a>
+                <p><strong>Author:</strong> Masashi Kishimoto </p>
+                <p><strong>Genre:</strong> Action,Drama</p>
+                <p class="description">Naruto Uzumaki, a young ninja with dreams of becoming the strongest Hokage
+                    , embarks on an adventure filled with friendship
+                    , challenges, and battles against powerful foes while discovering the truth about his past.</p>
+            </div>
+            <div class="book">
+                <a href="Mariem.html">
+                    <img src="Harry.jpg" alt="Book Cover">
+                    <h3>Harry Potter</h3>
+                </a>
+                <p><strong>Author:</strong> J.K. Rowling</p>
+                <p><strong>Genre:</strong> Fantasy, Adventure</p>
+                <p class="description">A young boy named Harry discovers he's a wizard and attends Hogwarts School of Witchcraft and Wizardry,
+                     where he learns magic, makes lifelong friends, 
+                     and faces the dark wizard, Lord Voldemort.</p>
+            </div>
+    
+            <div class="book">
+                <a href="Mariem.html">
+                    <img src="Death_Note.webp" alt="Book Cover">
+                    <h3>Death Note</h3>
+                </a>
+                <p><strong>Author:</strong> Tsugumi Ohba</p>
+                <p><strong>Genre:</strong> Psychological, Mystery</p>
+                <p class="description">When high school student Light Yagami finds a mysterious notebook that allows him to
+                     kill anyone by writing their name in it, he sets out to create a 
+                     crime-free world—but a genius detective, L, is determined to stop him.</p>
+            </div>
+    
+            <div class="book">
+                <a href="Mariem.html">
+                    <img src="Hobbitjpeg.jpeg" alt="Book Cover">
+                    <h3>The Hobbit</h3>
+                </a>
+                <p><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p><strong>Genre:</strong> Fantasy, Adventure</p>
+                <p class="description">Bilbo Baggins, a simple hobbit, is unexpectedly pulled into an epic
+                     adventure with a group of dwarves and the wizard Gandalf as they seek 
+                     to reclaim their homeland from the fearsome dragon, Smaug.</p>
+            </div>
+            <div class="book">
+                <a href="Mariem.html">
+                    <img src="OIP.jpg" alt="Book Cover">
+                    <h3>A Brief History of Time</h3>
+                </a>
+                <p><strong>Author:</strong> Stephen Hawking</p>
+                <p><strong>Genre:</strong> Science, Cosmology</p>
+                <p class="description">Stephen Hawking explores black holes, the Big Bang, and the nature of time in this groundbreaking work</p>
+            </div>
+    
+            <div class="book">
+                <a href="Mariem.html">
+                    <img src="gene_.jpg" alt="Book Cover">
+                    <h3>The Selfish Gene</h3>
+                </a>
+                <p><strong>Author:</strong> Richard Dawkins</p>
+                <p><strong>Genre:</strong> Biology, Evolution</p>
+                <p class="description">Dawkins explains evolution from the gene's perspective, introducing the concept of the "selfish gene" and its impact on survival</p>
+            </div>
+    
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Online Library.</p>
+    </footer>
+    <script src="Marwan.js"></script>
+    <script src="book_list.js"></script>
+</body>
+</html>

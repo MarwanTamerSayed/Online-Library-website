@@ -33,6 +33,71 @@ header {
     margin-right: 15px;
 }
 
+.top_right ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top_right ul li {
+    display: inline-block;
+}
+
+.top_right ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #FFF5E1;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.top_right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top_right a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #FFF5E1;
+    background-color: #8D6E63;
+    padding: 10px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.top_right a:hover {
+    background-color: #A1887F;
+    box-shadow: 0px 0px 8px rgba(255, 183, 77, 0.4);
+    transform: scale(1.1);
+}
+
+.vl {
+    border-left: 2px solid #FFF5E1;
+    height: 20px;
+}
+
+
+.Register {
+    background: #8D6E63;
+}
+
+.Register:hover {
+    background-color: #8D6E63;
+    box-shadow: 0 5px 15px rgba(255, 183, 77, 0.4);
+}
+
+
+.Log_in:hover{
+    background-color: #8D6E63;
+    box-shadow: 0 5px 15px rgba(255, 183, 77, 0.4);
+}
 h1 {
     font-size: 26px;
     font-weight: bold;
@@ -78,88 +143,6 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-.search-container {
-    display: flex;
-    gap: 10px;
-    margin-left: auto;
-    padding: 5px;
-}
-
-.search-container input {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    outline: none;
-}
-
-.search-container input:focus {
-    border-color: #A1887F;
-}
-
-.search-container button {
-    background-color: #A1887F;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-container button:hover {
-    background-color: #8D6E63;
-}
-
-
-form {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-form label {
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: block;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    outline: none;
-}
-
-form input:focus, form textarea:focus {
-    border-color: #A1887F;
-}
-
-form button {
-    background-color: #4E342E;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-form button::before {
-    content: "+ ";
-}
-
-form button:hover {
-    background-color: #8D6E63;
-    transform: scale(1.05) rotate(-1deg);
-}
 
 footer {
     position: static;
@@ -269,8 +252,8 @@ body {
 .browse-btn:hover {
     background-color: #8D6E63;
     box-shadow: 0 4px 8px rgba(255, 183, 77, 0.4);
+    transform: scale(1.1);
 }
-
 /*////////////FEATURED BOOKS////////////*/
 
 .featured-books {

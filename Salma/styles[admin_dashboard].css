@@ -301,3 +301,12 @@ footer p {
         font-size: 16px;
     }
 }
+
+#booksTableBody tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+#bookImage {
+    margin-bottom: 15px;
+}

@@ -1,112 +1,184 @@
-// Wait until the entire page content is loaded
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Get references to key elements
     const form = document.getElementById("addBookForm");
     const submitBtn = form.querySelector("button");
     const messageDiv = document.getElementById("message");
-    let rowBeingEdited = null;  // Holds the table row currently being edited
+    const tableBody = document.getElementById("booksTableBody");
+    let rowBeingEdited = null;
 
-    // Function to show a temporary success or error message
+    loadBooks();
+
+    document.getElementById('bookImage').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file && file.size > 2 * 1024 * 1024) {
+            showMessage("Image size should be less than 2MB", "error");
+            e.target.value = '';
+            return;
+        }
+        previewImage(e);
+    });
+
+    function previewImage(event) {
+        const preview = document.getElementById('imagePreview');
+        preview.innerHTML = '';
+
+        if (event.target.files.length > 0) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '200px';
+                img.style.maxHeight = '200px';
+                preview.appendChild(img);
+            }
+
+            reader.readAsDataURL(file);
+        }
+    }
+
     function showMessage(message, type) {
         messageDiv.textContent = message;
-        messageDiv.classList.remove("success", "error");  // Clear previous message styles
-        messageDiv.classList.add(type);                   // Apply the new message type
+        messageDiv.className = "message " + type;
         messageDiv.style.display = 'block';
 
-        setTimeout(() => { 
-            messageDiv.style.display = 'none';           // Hide the message after 2 seconds
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
         }, 2000);
     }
 
-    // Handle form submission for adding or updating a book
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();  // Prevent page refresh
+    function loadBooks() {
+        const books = JSON.parse(localStorage.getItem('books')) || [];
+        tableBody.innerHTML = '';
 
-        // Collect input values from the form
-        const id = document.getElementById("bookID").value.trim();
-        const title = document.getElementById("title").value.trim();
-        const author = document.getElementById("author").value.trim();
-        const category = document.getElementById("category").value.trim();
-        const description = document.getElementById("description").value.trim();
-
-        const table = document.querySelector("table tbody");
-
-        // Validate: Make sure the ID is a positive integer
-        if (isNaN(id) || Number(id) <= 0 || !Number.isInteger(Number(id))) {
-            showMessage("ID must be a positive integer number.", "error");
-            return;
-        }
-
-        // If adding a new book, check for duplicate ID
-        if (!rowBeingEdited) {
-            const duplicate = Array.from(table.rows).some(row => row.cells[0].textContent === id);
-            if (duplicate) {
-                showMessage("ID already exists. Please enter a unique ID.", "error");
-                return;
-            }
-        }
-
-        // If editing an existing book
-        if (rowBeingEdited) {
-            rowBeingEdited.cells[0].textContent = id;
-            rowBeingEdited.cells[1].textContent = title;
-            rowBeingEdited.cells[2].textContent = author;
-            rowBeingEdited.cells[3].textContent = category;
-            rowBeingEdited.setAttribute("data-description", description); // Save description as a custom attribute
-
-            showMessage("Book updated successfully!", "success");
-
-            rowBeingEdited = null;               // Reset editing state
-            submitBtn.textContent = "Add Book";  // Restore button text
-        } else {
-            // If adding a new book
-            const newRow = document.createElement("tr");
-            newRow.setAttribute("data-description", description);  // Store the description outside the table cells
-
-            // Build the new table row with book data and action buttons
-            newRow.innerHTML = `
-                <td>${id}</td>
-                <td>${title}</td>
-                <td>${author}</td>
-                <td>${category}</td>
+        books.forEach(book => {
+            const row = document.createElement("tr");
+            row.setAttribute("data-description", book.description);
+            row.setAttribute("data-image", book.image || "default-book.jpg");
+            row.innerHTML = `
+                <td>${book.id}</td>
+                <td>${book.title}</td>
+                <td>${book.author}</td>
+                <td>${book.category}</td>
                 <td>
                     <button class="edit-btn">Edit</button>
                     <button class="delete-btn">Delete</button>
                 </td>
             `;
-            table.appendChild(newRow);  // Add the row to the table
+            tableBody.appendChild(row);
+        });
+    }
 
-            showMessage("Book added successfully!", "success");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const id = document.getElementById("bookID").value.trim();
+        const title = document.getElementById("title").value.trim();
+        const author = document.getElementById("author").value.trim();
+        const category = document.getElementById("category").value.trim();
+        const description = document.getElementById("description").value.trim();
+        const imageInput = document.getElementById("bookImage");
+
+        let books = JSON.parse(localStorage.getItem('books')) || [];
+        let imageData = null;
+
+        if (imageInput.files.length > 0) {
+            const file = imageInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                imageData = e.target.result;
+                saveBook();
+            }
+            reader.readAsDataURL(file);
+        } else {
+            saveBook();
         }
 
-        form.reset();  // Clear form fields after submission
+        function saveBook() {
+            if (isNaN(id) || Number(id) <= 0 || !Number.isInteger(Number(id))) {
+                showMessage("ID must be a positive integer number.", "error");
+                return;
+            }
+
+            if (!rowBeingEdited) {
+                const duplicate = books.some(book => book.id === id);
+                if (duplicate) {
+                    showMessage("ID already exists. Please enter a unique ID.", "error");
+                    return;
+                }
+            }
+
+            if (rowBeingEdited) {
+                const bookId = rowBeingEdited.cells[0].textContent;
+                const index = books.findIndex(book => book.id === bookId);
+
+                if (index !== -1) {
+                    books[index] = {
+                        id: id,
+                        title: title,
+                        author: author,
+                        category: category,
+                        description: description,
+                        image: imageData || books[index].image
+                    };
+                    showMessage("Book updated successfully!", "success");
+                }
+            } else {
+                books.push({
+                    id: id,
+                    title: title,
+                    author: author,
+                    category: category,
+                    description: description,
+                    image: imageData || "default-book.jpg"
+                });
+                showMessage("Book added successfully!", "success");
+            }
+
+            localStorage.setItem('books', JSON.stringify(books));
+            loadBooks();
+            form.reset();
+            document.getElementById('imagePreview').innerHTML = '';
+            rowBeingEdited = null;
+            submitBtn.textContent = "Add Book";
+        }
     });
 
-    // Handle click events for Edit and Delete buttons inside the table
-    document.querySelector("table tbody").addEventListener("click", function (e) {
-
-        // If Delete button is clicked
+    tableBody.addEventListener("click", function (e) {
         if (e.target.classList.contains("delete-btn")) {
             if (confirm("Are you sure you want to delete this book?")) {
-                e.target.closest("tr").remove();  // Remove the table row
+                const row = e.target.closest("tr");
+                const bookId = row.cells[0].textContent;
+
+                let books = JSON.parse(localStorage.getItem('books')) || [];
+                books = books.filter(book => book.id !== bookId);
+                localStorage.setItem('books', JSON.stringify(books));
+
+                row.remove();
                 showMessage("Book deleted successfully.", "success");
             }
         }
 
-        // If Edit button is clicked
         if (e.target.classList.contains("edit-btn")) {
             const row = e.target.closest("tr");
-            rowBeingEdited = row;  // Save the row for updating
+            rowBeingEdited = row;
 
-            // Populate the form with existing values for editing
             document.getElementById("bookID").value = row.cells[0].textContent;
             document.getElementById("title").value = row.cells[1].textContent;
             document.getElementById("author").value = row.cells[2].textContent;
             document.getElementById("category").value = row.cells[3].textContent;
             document.getElementById("description").value = row.getAttribute("data-description") || "";
 
-            submitBtn.textContent = "Update Book";  // Change button text for edit mode
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = row.getAttribute("data-image");
+            img.style.maxWidth = '200px';
+            img.style.maxHeight = '200px';
+            preview.appendChild(img);
+
+            submitBtn.textContent = "Update Book";
         }
     });
 });

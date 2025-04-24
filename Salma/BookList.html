@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List - Online Library</title>
+    <link rel="stylesheet" href="styles[BookList&Aboutus].css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+        <div>
+            <h1>Biblionet</h1>
+            <p>Connecting Minds, One Book at a Time</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
+            <li><a href="Marwa_Page.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+            <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="Refaat_Page.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+        <form class="search-container" method="GET">
+            <input type="text" placeholder="Search for a book..." name="search">
+            <button type="submit"><i class="fas fa-search"></i> Search</button>
+        </form>
+    </nav>
+</header>
+
+<section class="book-list">
+    <h2>Available Books</h2>
+    <div class="book-container" id="bookContainer">
+        <!-- will be filled by localStorage -->
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Online Library.</p>
+</footer>
+<script src="book_list.js"></script>
+</body>
+</html>

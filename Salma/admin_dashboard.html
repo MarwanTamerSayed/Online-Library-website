@@ -19,7 +19,7 @@
         <ul>
             <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
-            <li><a href="Borrowed Books.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+            <li><a href="Borrowed_Books.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
             <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
             <li><a href="signup.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
@@ -49,12 +49,14 @@
             <label for="description">Description:</label>
             <textarea id="description" rows="4" required></textarea>
 
+            <label for="bookImage">Book Cover:</label>
+            <input type="file" id="bookImage" accept="image/*">
+            <div id="imagePreview"></div>
+
             <button type="submit">Add Book</button>
 
             <div id="message" class="message"></div>
         </form>
-
-
     </section>
 
     <section>
@@ -69,14 +71,8 @@
                 <th>Actions</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>100</td>
-                <td>Death Note</td>
-                <td>Tsugumi Ohba</td>
-                <td>Psychological, Mystery</td>
-                <td><button>Edit</button> <button>Delete</button></td>
-            </tr>
+            <tbody id="booksTableBody">
+            <!-- will be filled by localStorage -->
             </tbody>
         </table>
     </section>

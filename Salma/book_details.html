@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - Online Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="book_details.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+        <div>
+            <h1>Biblionet</h1>
+            <p>Connecting Minds, One Book at a Time</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
+            <li><a href="Borrowed Books.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+            <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="signup.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+        <form class="search-container" method="GET">
+            <input type="text" placeholder="Search for a book..." name="search">
+            <button type="submit"><i class="fas fa-search"></i> Search</button>
+        </form>
+    </nav>
+</header>
+
+<main>
+    <section class="book-details">
+        <div class="book-cover">
+            <img id="bookImage" src="" alt="Book Cover">
+        </div>
+        <div class="details-container">
+            <h2 id="bookTitle"></h2>
+            <p><strong>Author:</strong> <span id="bookAuthor"></span></p>
+            <p><strong>Genre:</strong> <span id="bookGenre"></span></p>
+            <p><strong>Description:</strong></p>
+            <p id="bookDescription"></p>
+            <button class="borrow-btn">Borrow Book</button>
+            <button class="back-btn">Back to List</button>
+            <div id="adminControls" class="admin-controls">
+                <button class="edit-btn">Edit Book</button>
+                <button class="delete-btn">Delete Book</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Online Library.</p>
+</footer>
+<script src="book_details.js"></script>
+</body>
+</html>

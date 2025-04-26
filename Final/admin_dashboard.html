@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblionet Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles[admin_dashboard].css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+        <div>
+            <h1>Biblionet</h1>
+            <p>Connecting Minds, One Book at a Time</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
+            <li><a href="Borrowed_Books.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+            <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="signup.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+        <form class="search-container" method="GET">
+            <input type="text" placeholder="Search for a book..." name="search">
+            <button type="submit"><i class="fas fa-search"></i> Search</button>
+        </form>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Add New Book</h2>
+        <form id="addBookForm">
+            <label for="bookID">ID:</label>
+            <input type="text" id="bookID" required>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" required>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4" required></textarea>
+
+            <label for="bookImage">Book Cover:</label>
+            <input type="file" id="bookImage" accept="image/*">
+            <div id="imagePreview"></div>
+
+            <button type="submit">Add Book</button>
+
+            <div id="message" class="message"></div>
+        </form>
+    </section>
+
+    <section>
+        <h2>Book List</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="booksTableBody">
+            <!-- will be filled by localStorage -->
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Online Library.</p>
+</footer>
+<script src="admin_dashboard.js"></script>
+</body>
+</html>

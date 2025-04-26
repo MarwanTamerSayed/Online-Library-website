@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+   
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Borrowed Books - BIBLIONET</title> 
+    <link rel="stylesheet" href="styles[Borrowed Books].css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<!-- Navigation Bar -->
+<header>
+    
+    <div class="header-container">
+        <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+        <div>
+            <h1>Biblionet</h1>
+            <p>Connecting Minds, One Book at a Time</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
+            <li><a href="Borrowed Books.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+            <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="signup.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+        <form class="search-container" onsubmit="return false;">
+            <input type="text" id="searchInput" placeholder="Search for a book..." onkeyup="searchBorrowedBooks()">
+            <button type="button" onclick="searchBorrowedBooks()">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </form>
+        
+    </nav>
+</header>
+
+<body>
+    
+    <h2>My Borrowed Books</h2>
+
+    <div class="book-container">
+
+    </div>
+    <script src ="BorrowedBooks.js"></script>
+    <script src="borrowed_books.js"></script>
+</body>
+<br> 
+<footer>
+    <p>&copy; 2025 Online Library.</p>
+</footer>
+</html>

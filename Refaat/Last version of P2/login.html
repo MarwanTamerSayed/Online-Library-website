@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Biblionet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="Validation_localStorage.js"></script>
+
+  </head>
+
+  <header>
+    <div class="header-container">
+      <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+        <div>
+            <h1>Biblionet</h1>
+            <p>Connecting Minds, One Book at a Time</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+          <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
+          <li><a href="Marwa_Page.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+          <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href="Refaat_Page.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+
+        </ul>
+    </nav>
+  </header>
+
+  <body>
+    <div class="container">
+      <form method="post" id="login-form">
+        <label for="User">Email address</label><br />
+        <input required type="text" id="User" />
+        <div id="username-error" style="color: red;font-size: small;"></div>
+        <br />
+        
+        <label for="pass">Password</label><br />
+        <input required type="Password" id="pass" />
+        <div id="pass-error" style="color: red;font-size: small;"></div>
+        <br />
+        <a class= "linkk" id="left" href="#">Forgot password?</a><br>
+        <input  type="submit" name="log" value="login" />
+        <p>Don't have an account? <a class="linkk" href="signup.html" > Sign up</a></p>
+        
+        
+      </form>
+    </div>
+  
+  </body>
+
+  <footer style="position: fixed">
+    <p>&copy; 2025 Online Library.</p>
+  </footer>
+</html>

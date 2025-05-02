@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up - Biblionet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="Validation_localStorage.js"></script>
+  </head>
+
+  <header>
+    <div class="header-container">
+      <img src="LOGO.png" alt="BIBLIONET Logo" class="logo">
+        <div>
+            <h1>Biblionet</h1>
+            <p>Connecting Minds, One Book at a Time</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+          <li><a href="Abdo_Page.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="BookList.html"><i class="fas fa-book"></i> Book List</a></li>
+          <li><a href="Marwa_Page.html"><i class="fas fa-book-reader"></i> Borrowed Books</a></li>
+          <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href="Refaat_Page.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+
+        </ul>
+    </nav>
+  </header>
+
+
+  <body>
+    <div class="container">
+      <form method="post" id="signup-form">
+        <label for="fname">First name</label><br />
+        <input required type="text" id="fname" />
+        <div id="fname-error" style="color:red; font-size: small;"></div>
+        <br />
+        <label for="lname">Last name</label><br />
+        <input required type="text" id="lname" />
+        <div id="lname-error" style="color:red; font-size: small;"></div>
+        <br />
+        <label for="email">Email</label><br />
+        <input required type="text" id="email" />
+        <div id="email-error" style="color:red; font-size: small;"></div>
+        <br />
+        <label for="pass1">Password</label><br />
+        <input required type="password" id="pass1" />
+        <div id="pass1-error" style="color:red; font-size: small;"></div>
+        <br />
+        <label for="pass2">Confirm password</label><br />
+        <input required type="password" id="pass2" />
+        <div id="pass2-error" style="color:red; font-size: small;"></div>
+        <br />
+        <div id="radio">
+          <label>Sign-up as</label> <br><br>
+          <input type="radio" id="admin" name="status" value="admin" required>
+          <label for="admin" id="AAdmin">Admin</label> 
+          <input type="radio" id="user" name="status" value="user">
+          <label for="user">User</label> <br><br>
+        </div>      
+        <input type="submit" name="log" value="submit" />
+      </form>
+    </div>
+  </body>
+
+  <footer>
+    <p>&copy; 2025 Online Library.</p>
+  </footer>
+</html>
